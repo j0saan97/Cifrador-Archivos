@@ -9,7 +9,11 @@ Cifrador de archivos en Python con interfaz Tkinter. Un solo archivo: `cifrador_
 
 ## Ejecutar
 - `python cifrador_3capas.py`: abre la ventana.
-- `python cifrador_3capas.py --test`: autoprueba sin ventana. Pasarla después de cualquier cambio en la parte criptográfica.
+- `python -m pytest tests`: batería de pruebas (pytest). Pasarla después de cualquier cambio.
+  - `tests/test_crypto.py`: las 3 capas, el rechazo de cada secreto incorrecto y la integridad de la cabecera y del texto cifrado.
+  - `tests/test_utils.py`: IDs, validación del patrón, suma de control, archivo llave y `unique_path`.
+  - `tests/test_files.py`: cifrar y descifrar en disco, sin sobrescribir nunca nada, y `read_header_ids`.
+- `python cifrador_3capas.py --test`: autoprueba rápida sin ventana y sin pytest.
 - Dependencia: `cryptography` (necesita una versión con `Argon2id`, es decir 44 o superior).
 
 ## Diseño criptográfico

@@ -3,3 +3,4 @@
 *.key
 *.c3
 .venv/
+.pytest_cache/
