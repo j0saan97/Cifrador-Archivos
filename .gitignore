@@ -1,0 +1,5 @@
+﻿__pycache__/
+*.pyc
+*.key
+*.c3
+.venv/
